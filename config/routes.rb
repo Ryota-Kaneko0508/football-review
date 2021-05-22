@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   
   get 'signup', to: 'users#new'
   resources :users, only: [:show, :create]
+  
+  get 'reviews', to: 'reviews#index'
+  resources :reviews, only: [:new, :create, :destroy]
 end

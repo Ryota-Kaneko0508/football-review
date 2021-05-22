@@ -11,13 +11,13 @@
           <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
             <ul class="dropdown-menu dropdown-menu-right">
-              <li class="dropdown-item">レビュー一覧</li>
+              <li class="dropdown-item"><%= link_to 'レビュー一覧', reviews_path %></li>
               <li class="dropdown-divider"></li>
-              <li class="dropdown-item">投稿ページ</li>
+              <li class="dropdown-item"><%= link_to '投稿ページ', new_review_path %></li>
               <li class="dropdown-divider"></li>
               <li class="dropdown-item">いいね一覧</li>
               <li class="dropdown-divider"></li>
-              <li class="dropdown-item">自分のレビュー</li>
+              <li class="dropdown-item"><%= link_to '自分のレビュー', user_path(current_user) %></li>
               <li class="dropdown-divider"></li>
               <li class="dropdown-item"><%= link_to 'ログアウト', logout_path, method: :delete %></li>
             </ul>

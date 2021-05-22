@@ -1,0 +1,22 @@
+<div class="text-center">
+  <h1 class="mb-4">投稿ページ</h1>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+    <%= form_with(model: @review, local: true) do |f| %>
+    
+      <div class="form-group">
+        <%= f.label :match, '試合' %>
+        <%= f.text_field :match, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :content, 'レビュー' %>
+        <%= f.text_area :content, class: 'form-control' %>
+      </div>
+      
+      <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
+    <% end %>
+  </div>
+</div>

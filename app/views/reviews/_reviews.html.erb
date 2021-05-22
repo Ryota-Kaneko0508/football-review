@@ -1,0 +1,26 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>ユーザー名</th>
+      <th>試合</th>
+      <th>レビュー</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% reviews.each do |review| %>
+      <tr>
+        <td><%= current_user.name %></td>
+        <td><%= review.match %></td>
+        <td><%= review.content %></td>
+        <td>
+          <% if current_user == review.user %>
+            <%= link_to "削除", review, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+          <% end %> 
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+  <div>
+    <%= paginate @reviews %>
+  </div>
+</table>
