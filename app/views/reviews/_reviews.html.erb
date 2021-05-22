@@ -12,6 +12,7 @@
         <td><%= current_user.name %></td>
         <td><%= review.match %></td>
         <td><%= review.content %></td>
+        <td><%= render 'likes/like_button', review: review %></td>
         <td>
           <% if current_user == review.user %>
             <%= link_to "削除", review, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
@@ -21,6 +22,6 @@
     <% end %>
   </tbody>
   <div>
-    <%= paginate @reviews %>
+    <%= paginate reviews %>
   </div>
 </table>

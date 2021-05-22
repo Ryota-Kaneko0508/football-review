@@ -1,7 +1,9 @@
 <div class="text-center">
-  <h1>レビュー一覧</h1>
+  <h1 mb-2>レビュー一覧</h1>
 </div>
 
 <%= render 'reviews/reviews', reviews: @reviews %>
+
+<%= link_to '投稿ページ', new_review_path, class: 'btn btn-primary' %>
 
 

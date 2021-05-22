@@ -1,0 +1,11 @@
+<% if current_user.like?(review) %>
+  <%= form_with(model: current_user.likes.find_by(review_id: review.id), local: true, method: :delete) do |f| %>
+    <%= hidden_field_tag :review_id, review.id %>
+    <%= f.submit 'いいね削除', class: 'btn btn-danger btn-sm' %>
+  <% end %>
+<% else %>
+  <%= form_with(model: current_user.likes.build, local: true) do |f| %>
+    <%= hidden_field_tag :review_id, review.id %>
+    <%= f.submit 'いいね', class: 'btn btn-primary btn-sm' %>
+  <% end %>
+<% end %>

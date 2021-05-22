@@ -3,7 +3,8 @@ class ReviewsController < ApplicationController
   before_action :correct_user, only: [:destroy]
   
   def index
-    @reviews = current_user.reviews.order(id: :desc).page(params[:page])
+    @user = User.all
+    @reviews = Review.order(id: :desc).page(params[:page])
   end
 
   def new
@@ -14,7 +15,7 @@ class ReviewsController < ApplicationController
     @review = current_user.reviews.build(review_params)
     if @review.save
       flash[:success] = 'レビューを投稿しました。'
-      redirect_to review_url
+      redirect_to reviews_url
     else
       @reviews = current_user.reviews.order(id: :desc).page(params[:page]) 
       flash.now[:danger] = 'レビューの投稿に失敗しました。'

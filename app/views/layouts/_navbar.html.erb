@@ -15,7 +15,7 @@
               <li class="dropdown-divider"></li>
               <li class="dropdown-item"><%= link_to '投稿ページ', new_review_path %></li>
               <li class="dropdown-divider"></li>
-              <li class="dropdown-item">いいね一覧</li>
+              <li class="dropdown-item"><%= link_to 'いいね一覧', likes_user_path(current_user) %></li>
               <li class="dropdown-divider"></li>
               <li class="dropdown-item"><%= link_to '自分のレビュー', user_path(current_user) %></li>
               <li class="dropdown-divider"></li>

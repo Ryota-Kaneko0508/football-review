@@ -3,3 +3,5 @@
 </div>
 
 <%= render 'reviews/reviews', reviews: @reviews %>
+
+<%= link_to 'いいね一覧', likes_user_path(current_user), class: 'btn btn-primary' %>
