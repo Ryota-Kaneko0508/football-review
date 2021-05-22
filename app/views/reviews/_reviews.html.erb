@@ -4,6 +4,8 @@
       <th>ユーザー名</th>
       <th>試合</th>
       <th>レビュー</th>
+      <th>いいね</th>
+      <th>削除</th>
     </tr>
   </thead>
   <tbody>
@@ -11,7 +13,7 @@
       <tr>
         <td><%= review.user.name %></td>
         <td><%= review.match %></td>
-        <td><%= review.content %></td>
+        <td><%= simple_format review.content %></td>
         <td><%= render 'likes/like_button', review: review %></td>
         <td>
           <% if current_user == review.user %>
