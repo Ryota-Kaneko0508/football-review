@@ -9,7 +9,7 @@
   <tbody>
     <% reviews.each do |review| %>
       <tr>
-        <td><%= current_user.name %></td>
+        <td><%= review.user.name %></td>
         <td><%= review.match %></td>
         <td><%= review.content %></td>
         <td><%= render 'likes/like_button', review: review %></td>

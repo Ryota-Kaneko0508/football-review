@@ -23,7 +23,4 @@ class User < ApplicationRecord
     likes_reviews.include?(review)
   end
   
-  def feed_reviews
-    Review.where(user_id: user.id + [self.id])
-  end
 end
